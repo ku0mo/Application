@@ -1,21 +1,42 @@
-﻿using System;
+﻿// GetType.Name
+using System;
 namespace CSharpConsoleApp
 {
     class Program
     {
         static void Main(string[] args)
         {
-            int n = 100;
-            double d = 5.5;
+            System.Int32 n = 100;
+            System.Double d = 5.5;
 
-            Console.WriteLine(n.ToString());
-            Console.WriteLine(d.ToString());
-            Console.WriteLine(100.ToString());
-            Console.WriteLine((5.5).ToString());
-            //ToString() - virtual method은 문자열로 바꾸어주는 역할
+            Console.WriteLine(n.GetType().Name);
+            Console.WriteLine(d.GetType().Name);
+            Console.WriteLine(100.GetType().Name);
+            Console.WriteLine((5.5).GetType().Name);
         }
     }
 }
+
+
+
+//using System;
+//namespace CSharpConsoleApp
+//{
+//    class Program
+//    {
+//        static void Main(string[] args)
+//        {
+//            int n = 100;
+//            double d = 5.5;
+
+//            Console.WriteLine(n.ToString());
+//            Console.WriteLine(d.ToString());
+//            Console.WriteLine(100.ToString());
+//            Console.WriteLine((5.5).ToString());
+//            //ToString() - virtual method은 문자열로 바꾸어주는 역할
+//        }
+//    }
+//}
 
 
 
