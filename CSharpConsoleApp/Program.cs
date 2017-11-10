@@ -1,17 +1,37 @@
-﻿// 문자열 입력
-using System; 
-namespace CSharpConsoleApp
-{
-    class Program
-    {
-        static void Main(string[] args)
-        {
-            Console.Write("문자열 입력: ");
-            string s = Console.ReadLine(); // C#에서 모든 입력은 이 명령어를 사용한다.
-            Console.WriteLine("string : {0}", s);
-        }
-    }
-}
+﻿
+
+//// 문자 입력
+//using System;
+//namespace CSharpConsoleApp
+//{
+//    class Program
+//    {
+//        static void Main(string[] args)
+//        {
+//            int c = Console.Read();
+
+//            Console.WriteLine("string : {0}", (char)c); // 아스키 코드값을 확인할 수 있다.
+//            Console.WriteLine("string : {0}", c); // 아스키 코드값을 확일 할 수 있다.
+//        }
+//    }
+//}
+
+
+
+//// 문자열 입력
+//using System; 
+//namespace CSharpConsoleApp
+//{
+//    class Program
+//    {
+//        static void Main(string[] args)
+//        {
+//            Console.Write("문자열 입력: ");
+//            string s = Console.ReadLine(); // C#에서 모든 입력은 이 명령어를 사용한다.
+//            Console.WriteLine("string : {0}", s);
+//        }
+//    }
+//}
 
 
 //using System;
