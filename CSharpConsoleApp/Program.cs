@@ -1,4 +1,22 @@
-﻿
+﻿// 정수 및 실수 입력
+using System;
+namespace CSharpConsoleApp
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.Write("실수 입력 : ");
+            double n1 = double.Parse(Console.ReadLine());
+
+            Console.Write("실수 입력 : ");
+            double n2 = double.Parse(Console.ReadLine());
+
+            double sum = n1 + n2;
+            Console.WriteLine("{0} + {1} = {2}", n1, n2, sum);
+        }
+    }
+}
 
 //// 문자 입력
 //using System;
