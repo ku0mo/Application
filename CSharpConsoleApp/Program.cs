@@ -1,4 +1,4 @@
-﻿// GetType.Name
+﻿// 값형식과 참조형식
 using System;
 namespace CSharpConsoleApp //
 {
@@ -6,16 +6,48 @@ namespace CSharpConsoleApp //
     {
         static void Main(string[] args)
         {
-            System.Int32 n = 100;
-            System.Double d = 5.5;
+            int n = 100;
+            double d = 5.5;
 
-            Console.WriteLine(n.GetType().Name);
-            Console.WriteLine(d.GetType().Name);
-            Console.WriteLine(100.GetType().Name);
-            Console.WriteLine((5.5).GetType().Name);
+            string sn = n.ToString(); // 정수를 문자열 형식으로
+            System.String sd = d.ToString(); // 실수를 문자열 형식으로
+
+            int n2 = int.Parse(sn); // 문자열을 정수 형식으로
+            double d2 = double.Parse(sd); // 문자열을 실수로
+
+            Console.WriteLine("{0}, {1}", n2, d2);
+            /*
+             * 기본형식(내장)
+             *     값 형식(객체를 값으로 다룸)
+             *      -bool, char, int, double ... etc
+             *     
+             *     참조형식(객체를 참조로 다룸)
+             *      -string, object
+             */
         }
     }
 }
+
+
+
+//// GetType.Name
+//using System;
+//namespace CSharpConsoleApp //
+//{
+//    class Program
+//    {
+//        static void Main(string[] args)
+//        {
+//            System.Int32 n = 100;
+//            System.Double d = 5.5;
+
+//            Console.WriteLine(n.GetType().Name);
+//            Console.WriteLine(d.GetType().Name);
+//            Console.WriteLine(100.GetType().Name);
+//            Console.WriteLine((5.5).GetType().Name);
+//        }
+//    }
+//}
 
 
 
