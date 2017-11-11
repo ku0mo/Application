@@ -1,4 +1,4 @@
-﻿// for
+﻿// while 문
 using System;
 namespace CSharpConsoleApp
 {
@@ -6,13 +6,33 @@ namespace CSharpConsoleApp
     {
         static void Main(string[] args)
         {
-            for(int i = 0; i < 100; ++i)
+            while(true) //bool 형식만 올 수 있다
             {
-                Console.WriteLine(i);
+                string s = Console.ReadLine();
+                if (s == "exit")
+                    return;
+                else
+                    Console.WriteLine("string : {0}", s);
             }
         }
     }
 }
+
+//// for
+//using System;
+//namespace CSharpConsoleApp
+//{
+//    class Program
+//    {
+//        static void Main(string[] args)
+//        {
+//            for(int i = 0; i < 100; ++i)
+//            {
+//                Console.WriteLine(i);
+//            }
+//        }
+//    }
+//}
 
 
 //// switch 
