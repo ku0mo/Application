@@ -1,4 +1,4 @@
-﻿// 값형식과 참조형식
+﻿// 값 형식을 -> 참조형식 Boxing
 using System;
 namespace CSharpConsoleApp //
 {
@@ -9,24 +9,45 @@ namespace CSharpConsoleApp //
             int n = 100;
             double d = 5.5;
 
-            string sn = n.ToString(); // 정수를 문자열 형식으로
-            System.String sd = d.ToString(); // 실수를 문자열 형식으로
+            object o1 = n; //object(부모형식)을 상속받기 때문에 가능하다. 자식형식을 부모형식으로 형변환
+            object o2 = d; //주의할점은 값형식(stack)을 참조형식(heap)으로 변환하기 위한 작업과정 박싱이 수행된다.
 
-            int n2 = int.Parse(sn); // 문자열을 정수 형식으로
-            double d2 = double.Parse(sd); // 문자열을 실수로
-
-            Console.WriteLine("{0}, {1}", n2, d2);
-            /*
-             * 기본형식(내장)
-             *     값 형식(객체를 값으로 다룸)
-             *      -bool, char, int, double ... etc
-             *     
-             *     참조형식(객체를 참조로 다룸)
-             *      -string, object
-             */
+            Console.WriteLine("{0}, {1}", o1, o2);
         }
     }
 }
+
+
+
+//// 값형식과 참조형식
+//using System;
+//namespace CSharpConsoleApp //
+//{
+//    class Program
+//    {
+//        static void Main(string[] args)
+//        {
+//            int n = 100;
+//            double d = 5.5;
+
+//            string sn = n.ToString(); // 정수를 문자열 형식으로
+//            System.String sd = d.ToString(); // 실수를 문자열 형식으로
+
+//            int n2 = int.Parse(sn); // 문자열을 정수 형식으로
+//            double d2 = double.Parse(sd); // 문자열을 실수로
+
+//            Console.WriteLine("{0}, {1}", n2, d2);
+//            /*
+//             * 기본형식(내장)
+//             *     값 형식(객체를 값으로 다룸)
+//             *      -bool, char, int, double ... etc
+//             *     
+//             *     참조형식(객체를 참조로 다룸)
+//             *      -string, object
+//             */
+//        }
+//    }
+//}
 
 
 
