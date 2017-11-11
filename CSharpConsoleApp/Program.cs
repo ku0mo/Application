@@ -1,27 +1,47 @@
-﻿// 값 형식을 -> 참조형식 Boxing
+﻿//비트연산
 using System;
-namespace CSharpConsoleApp //
+namespace CSharpConsoleApp
 {
     class Program
     {
         static void Main(string[] args)
         {
-            int n = 100;
-            double d = 5.5;
+            int n1 = 0x1234;    //0001 0010 0011 0100
+            int n2 = 0x5678;    //0101 0110 0111 1000
+                                //0101 0110 0111 1100
+                                // 5    6    7    C
 
-            object o1 = n; //object(부모형식)을 상속받기 때문에 가능하다. 자식형식을 부모형식으로 형변환
-            object o2 = d; //주의할점은 값형식(stack)을 참조형식(heap)으로 변환하기 위한 작업과정 박싱이 수행된다.
-
-            Console.WriteLine("{0}, {1}", o1, o2);
+            int r = n1 | n2;
+            Console.WriteLine("{0}, {1:x}", r, r); //1:x -> 16진수
         }
     }
 }
 
 
+//// 값 형식을 -> 참조형식 Boxing
+//using System;
+//namespace CSharpConsoleApp 
+//{
+//    class Program
+//    {
+//        static void Main(string[] args)
+//        {
+//            int n = 100;
+//            double d = 5.5;
+
+//            object o1 = n; //object(부모형식)을 상속받기 때문에 가능하다. 자식형식을 부모형식으로 형변환
+//            object o2 = d; //주의할점은 값형식(stack)을 참조형식(heap)으로 변환하기 위한 작업과정 박싱이 수행된다.
+
+//            Console.WriteLine("{0}, {1}", o1, o2);
+//        }
+//    }
+//}
+
+
 
 //// 값형식과 참조형식
 //using System;
-//namespace CSharpConsoleApp //
+//namespace CSharpConsoleApp 
 //{
 //    class Program
 //    {
@@ -53,7 +73,7 @@ namespace CSharpConsoleApp //
 
 //// GetType.Name
 //using System;
-//namespace CSharpConsoleApp //
+//namespace CSharpConsoleApp 
 //{
 //    class Program
 //    {
