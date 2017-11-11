@@ -1,6 +1,6 @@
 ﻿// GetType.Name
 using System;
-namespace CSharpConsoleApp
+namespace CSharpConsoleApp //
 {
     class Program
     {
