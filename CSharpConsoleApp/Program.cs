@@ -1,5 +1,4 @@
-﻿//var 형식
-using System;
+﻿using System;
 namespace CSharpConsoleApp
 {
     class Program
@@ -14,9 +13,37 @@ namespace CSharpConsoleApp
             Console.WriteLine("{0}, {1}, {2}, {3}", a, b, c, d);
             Console.WriteLine("{0}, {1}, {2}, {3}", a.GetType(), b, c, d); //GetType()은 Type 객체르 반환한다.
             Console.WriteLine("{0}, {1}, {2}, {3}", a.GetType().Name, b, c, d); // type객체의 이름을 반환한다.
+
+            Type t = a.GetType();
+
+            Console.WriteLine(t); //ToString()을 호출해서 문자열로 반환
+            Console.WriteLine(t.Name);
+            Console.WriteLine(t.BaseType.Name); //BaseType은 부모타입을 알려준다.
+            Console.WriteLine(t.BaseType.BaseType.Name); //부모의 부모타입을 알려준다.
         }
     }
 }
+
+
+////var 형식
+//using System;
+//namespace CSharpConsoleApp
+//{
+//    class Program
+//    {
+//        static void Main(string[] args)
+//        {
+//            var a = 5.5; // 오른쪽 타입을 보고 var의 형식이 정해진다.
+//            var b = 500;
+//            var c = "ABC";
+//            var d = 'A';
+
+//            Console.WriteLine("{0}, {1}, {2}, {3}", a, b, c, d);
+//            Console.WriteLine("{0}, {1}, {2}, {3}", a.GetType(), b, c, d); //GetType()은 Type 객체르 반환한다.
+//            Console.WriteLine("{0}, {1}, {2}, {3}", a.GetType().Name, b, c, d); // type객체의 이름을 반환한다.
+//        }
+//    }
+//}
 
 
 ////bool 형식(TRUE or FALSE)
