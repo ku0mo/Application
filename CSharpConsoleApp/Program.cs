@@ -1,5 +1,4 @@
-﻿
-// switch 
+﻿// for
 using System;
 namespace CSharpConsoleApp
 {
@@ -7,26 +6,43 @@ namespace CSharpConsoleApp
     {
         static void Main(string[] args)
         {
-            string n = "2"; //문자열 형식으로도 가능
-            switch (n)
+            for(int i = 0; i < 100; ++i)
             {
-                case "1":
-                    Console.WriteLine("==1==");
-                    break; //C#은 break를 지울 수 없다
-                case "2":
-                    Console.WriteLine("==2==");
-                    break;
-                case "3":
-                    Console.WriteLine("==3==");
-                    break;
-                default:
-                    Console.WriteLine("=====");
-                    break;
+                Console.WriteLine(i);
             }
-            Console.WriteLine("End Main");
         }
     }
 }
+
+
+//// switch 
+//using System;
+//namespace CSharpConsoleApp
+//{
+//    class Program
+//    {
+//        static void Main(string[] args)
+//        {
+//            string n = "2"; //문자열 형식으로도 가능
+//            switch (n)
+//            {
+//                case "1":
+//                    Console.WriteLine("==1==");
+//                    break; //C#은 break를 지울 수 없다
+//                case "2":
+//                    Console.WriteLine("==2==");
+//                    break;
+//                case "3":
+//                    Console.WriteLine("==3==");
+//                    break;
+//                default:
+//                    Console.WriteLine("=====");
+//                    break;
+//            }
+//            Console.WriteLine("End Main");
+//        }
+//    }
+//}
 
 
 
