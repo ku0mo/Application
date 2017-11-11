@@ -1,4 +1,4 @@
-﻿// while 문
+﻿// 배열
 using System;
 namespace CSharpConsoleApp
 {
@@ -6,17 +6,36 @@ namespace CSharpConsoleApp
     {
         static void Main(string[] args)
         {
-            while(true) //bool 형식만 올 수 있다
+            int[] arr = { 10, 20, 30, 40, 50 };
+
+            for(int i = 0; i < 5; ++i)
             {
-                string s = Console.ReadLine();
-                if (s == "exit")
-                    return;
-                else
-                    Console.WriteLine("string : {0}", s);
+                Console.WriteLine("{0} : {1}", i, arr[i]);
             }
         }
     }
 }
+
+
+//// while 문
+//using System;
+//namespace CSharpConsoleApp
+//{
+//    class Program
+//    {
+//        static void Main(string[] args)
+//        {
+//            while(true) //bool 형식만 올 수 있다
+//            {
+//                string s = Console.ReadLine();
+//                if (s == "exit")
+//                    return;
+//                else
+//                    Console.WriteLine("string : {0}", s);
+//            }
+//        }
+//    }
+//}
 
 //// for
 //using System;
