@@ -1,4 +1,4 @@
-﻿//비트연산
+﻿//var 형식
 using System;
 namespace CSharpConsoleApp
 {
@@ -6,16 +6,54 @@ namespace CSharpConsoleApp
     {
         static void Main(string[] args)
         {
-            int n1 = 0x1234;    //0001 0010 0011 0100
-            int n2 = 0x5678;    //0101 0110 0111 1000
-                                //0101 0110 0111 1100
-                                // 5    6    7    C
+            var a = 5.5; // 오른쪽 타입을 보고 var의 형식이 정해진다.
+            var b = 500;
+            var c = "ABC";
+            var d = 'A';
 
-            int r = n1 | n2;
-            Console.WriteLine("{0}, {1:x}", r, r); //1:x -> 16진수
+            Console.WriteLine("{0}, {1}, {2}, {3}", a, b, c, d);
+            Console.WriteLine("{0}, {1}, {2}, {3}", a.GetType(), b, c, d); //GetType()은 Type 객체르 반환한다.
+            Console.WriteLine("{0}, {1}, {2}, {3}", a.GetType().Name, b, c, d); // type객체의 이름을 반환한다.
         }
     }
 }
+
+
+////bool 형식(TRUE or FALSE)
+//using System;
+//namespace CSharpConsoleApp
+//{
+//    class Program
+//    {
+//        static void Main(string[] args)
+//        {
+//            bool b = true;
+
+//            Console.WriteLine(b);
+//        }
+//    }
+//}
+
+
+
+////비트연산
+//using System;
+//namespace CSharpConsoleApp
+//{
+//    class Program
+//    {
+//        static void Main(string[] args)
+//        {
+//            int n1 = 0x1234;    //0001 0010 0011 0100
+//            int n2 = 0x5678;    //0101 0110 0111 1000
+//                                //0101 0110 0111 1100
+//                                // 5    6    7    C
+
+//            int r = n1 | n2;
+//            Console.WriteLine("{0}, {1:x}", r, r); //1:x -> 16진수
+//        }
+//    }
+//}
 
 
 //// 값 형식을 -> 참조형식 Boxing
