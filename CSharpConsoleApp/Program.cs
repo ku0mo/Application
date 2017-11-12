@@ -1,11 +1,12 @@
-﻿// getter, setter 하나로 프로퍼티
+﻿// 기본 생성자 
 using System;
 namespace CSharpConsoleApp
 {
     public class Point
     {
         private int x, y;
-        public Point(int _x = 0, int _y = 0)
+        public Point() { }
+        public Point(int _x, int _y)
         {
             x = _x;
             y = _y;
@@ -29,14 +30,54 @@ namespace CSharpConsoleApp
     {
         static void Main(string[] args)
         {
-            Point pt1 = new Point();
+            //Point pt1 = new Point() { X = 2, Y = 3 };
+            Point pt1 = new Point { X = 2, Y = 3 };
 
-            pt1.X = 1;
-            pt1.Y = 2;
             Console.WriteLine("{0}, {1}", pt1.X, pt1.Y);
         }
     }
 }
+
+
+//// getter, setter 하나로 프로퍼티
+//using System;
+//namespace CSharpConsoleApp
+//{
+//    public class Point
+//    {
+//        private int x, y;
+//        public Point(int _x = 0, int _y = 0)
+//        {
+//            x = _x;
+//            y = _y;
+//        }
+//        public override string ToString() //모든 형식을 문자열로 바꿀 수 있는 override 사용, 문자열 더하기
+//        {
+//            return "(" + x + "," + y + ")"; //C#의 문자열은 변경 불가능한 문자열이다.
+//        }
+//        public int X
+//        {
+//            get { return x; }
+//            set { x = value; }
+//        }
+//        public int Y
+//        {
+//            get { return y; }
+//            set { y = value; }
+//        }
+//    }
+//    class Program
+//    {
+//        static void Main(string[] args)
+//        {
+//            Point pt1 = new Point();
+
+//            pt1.X = 1;
+//            pt1.Y = 2;
+//            Console.WriteLine("{0}, {1}", pt1.X, pt1.Y);
+//        }
+//    }
+//}
 
 
 //// getter, setter 
