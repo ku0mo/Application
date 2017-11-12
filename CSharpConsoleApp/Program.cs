@@ -1,29 +1,19 @@
-﻿// <접근 제한자>
-/* 1. private : 동일 클래스 내의 멤버만 접근 가능하다.
- * 2. protected : 파생 클래스에서 이 클래스 멤버를 엑세스할 수 있다.
- * 3. public : 모든 외부 혹은 파생 클래스에서 이 클래스를 액세스할 수 있다 
-      (개별 멤버의 액세스 권한은 해당 멤버의 접근 제한자에 따라 별도로 제한된다)
- * 4. internal : 동일한 Assembly 내에 있는 다른 클래스들이 엑세스할 수 있다. 다른 어셈블리에서는 접근 불가
- * 5. protectediternal : 잘 안씀
- * => 다섯가지 모두 멤버 사용가능
- * => 클래스에는 3, 4번만 사용가능 
- * => 내포 클래스에서는 1번도 가능
- */
+﻿// override
 using System;
 namespace CSharpConsoleApp
 {
-    class Point : Object //object가 생략되어됨 , 상속하겠다
+    public class Point : Object //object가 생략되어됨 , 상속하겠다
     {
         private int x, y;
         // ↑Field(정적속성)//↓Method(동적메소드)
-        public Point(int _x=0, int _y = 0)
+        public Point(int _x = 0, int _y = 0)
         {
             x = _x;
             y = _y;
         }
-        public void Print()
+        public override string ToString()
         {
-            Console.WriteLine("({0}, {1})", x, y);
+            return "(" + x + "," + y + ")";
         }
     }
     class Program
@@ -31,10 +21,50 @@ namespace CSharpConsoleApp
         static void Main(string[] args)
         {
             Point pt1 = new Point();
-            pt1.Print();
+            Console.WriteLine(pt1);
         }
     }
 }
+
+
+
+//// <접근 제한자>
+///* 1. private : 동일 클래스 내의 멤버만 접근 가능하다.
+// * 2. protected : 파생 클래스에서 이 클래스 멤버를 엑세스할 수 있다.
+// * 3. public : 모든 외부 혹은 파생 클래스에서 이 클래스를 액세스할 수 있다 
+//      (개별 멤버의 액세스 권한은 해당 멤버의 접근 제한자에 따라 별도로 제한된다)
+// * 4. internal : 동일한 Assembly 내에 있는 다른 클래스들이 엑세스할 수 있다. 다른 어셈블리에서는 접근 불가
+// * 5. protectediternal : 잘 안씀
+// * => 다섯가지 모두 멤버 사용가능
+// * => 클래스에는 3, 4번만 사용가능 
+// * => 내포 클래스에서는 1번도 가능
+// */
+//using System;
+//namespace CSharpConsoleApp
+//{
+//    class Point : Object //object가 생략되어됨 , 상속하겠다
+//    {
+//        private int x, y;
+//        // ↑Field(정적속성)//↓Method(동적메소드)
+//        public Point(int _x=0, int _y = 0)
+//        {
+//            x = _x;
+//            y = _y;
+//        }
+//        public void Print()
+//        {
+//            Console.WriteLine("({0}, {1})", x, y);
+//        }
+//    }
+//    class Program
+//    {
+//        static void Main(string[] args)
+//        {
+//            Point pt1 = new Point();
+//            pt1.Print();
+//        }
+//    }
+//}
 
 
 //// 가변배열
