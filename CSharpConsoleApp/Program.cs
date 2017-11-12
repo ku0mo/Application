@@ -1,20 +1,91 @@
-﻿// 배열
+﻿// foreach
 using System;
 namespace CSharpConsoleApp
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main(string[] args) // string 배열의 참조, 배열은 클래스면서 참조형식이다.
         {
             int[] arr = { 10, 20, 30, 40, 50 };
+            foreach (int data in arr) 
+                Console.WriteLine(data);
 
-            for(int i = 0; i < 5; ++i)
-            {
-                Console.WriteLine("{0} : {1}", i, arr[i]);
-            }
+            //나열되어 있는 배열에서 각각 하나씩 가져와서 data 에 넣어라
+            //iterator를 사용할 일 없이 자료구조를 사용할 수 있는 장점!
         }
     }
 }
+
+
+//// 배열
+//using System;
+//namespace CSharpConsoleApp
+//{
+//    class Program
+//    {
+//        static void Main(string[] args) // string 배열의 참조, 배열은 클래스면서 참조형식이다.
+//        {
+//            Console.WriteLine("string Length : {0}", args.Length); // 프로그램 인수를 입력하지 않았기때문에 0
+//            for(int i = 0; i < args.Length; ++i)
+//            {
+//                Console.Write("{0}", args[i]);
+//            }
+//            Console.WriteLine();
+//        }
+//    }
+//}
+
+
+
+//// 배열
+//using System;
+//namespace CSharpConsoleApp
+//{
+//    class Program
+//    {
+//        static void InitArray(int[] arr)
+//        {
+//            for(int i = 0; i < arr.Length; ++i)
+//            {
+//                arr[i] = (i + 1) * 10;
+//            }
+//        }
+//        static void PrintArray(int[] arr)
+//        {
+//            for(int i = 0; i < arr.Length; ++i)
+//            {
+//                Console.WriteLine("{0} : {1}", i, arr[i]);
+//            }
+//        }
+//        static void Main(string[] args)
+//        {
+//            int[] arr = new int[5];
+
+//            InitArray(arr);
+//            PrintArray(arr);
+//        }
+//    }
+//}
+
+
+//// 배열
+//using System;
+//namespace CSharpConsoleApp
+//{
+//    class Program
+//    {
+//        static void Main(string[] args)
+//        {
+//            //int[] arr = { 10, 20, 30, 40, 50 }; // arr(참조변수)이 int[](10,20,30,40,50)을 참조함(arr[0~4])
+//            //int[] arr = new int[5] { 10, 20, 30, 40, 50 };// 정식 코드
+//            int[] arr = new int[] { 10, 20, 30, 40, 50 }; // 배열의 갯수 생략 가능
+//            for(int i = 0; i < 5; ++i)
+//            {
+//                Console.WriteLine("{0} : {1}", i, arr[i]);
+//            }
+//        }
+//    }
+//}
 
 
 //// while 문
