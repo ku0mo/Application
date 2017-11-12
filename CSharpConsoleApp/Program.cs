@@ -1,30 +1,66 @@
-﻿// override
+﻿// getter, setter 
 using System;
 namespace CSharpConsoleApp
 {
-    public class Point : Object //object가 생략되어됨 , 상속하겠다
+    public class Point
     {
         private int x, y;
-        // ↑Field(정적속성)//↓Method(동적메소드)
         public Point(int _x = 0, int _y = 0)
         {
             x = _x;
             y = _y;
         }
-        public override string ToString()
+        public override string ToString() //모든 형식을 문자열로 바꿀 수 있는 override 사용, 문자열 더하기
         {
-            return "(" + x + "," + y + ")";
+            return "(" + x + "," + y + ")"; //C#의 문자열은 변경 불가능한 문자열이다.
         }
+        public int GetX() { return x; }
+        public void SetX(int _x) { x = _x; }
+
+        public int GetY() { return y; }
+        public void SetY(int _y) { y = _y; }
     }
     class Program
     {
         static void Main(string[] args)
         {
             Point pt1 = new Point();
-            Console.WriteLine(pt1);
+
+            pt1.SetX(1);
+            pt1.SetY(2);
+            Console.WriteLine("{0}, {1}", pt1.GetX(), pt1.GetY());
         }
     }
 }
+
+
+//// override
+//using System;
+//namespace CSharpConsoleApp
+//{
+//    public class Point : Object //object가 생략되어됨 , 상속하겠다
+//    {
+//        private int x, y;
+//        // ↑Field(정적속성)//↓Method(동적메소드)
+//        public Point(int _x = 0, int _y = 0)
+//        {
+//            x = _x;
+//            y = _y;
+//        }
+//        public override string ToString() //모든 형식을 문자열로 바꿀 수 있는 override 사용, 문자열 더하기
+//        {
+//            return "(" + x + "," + y + ")"; //C#의 문자열은 변경 불가능한 문자열이다.
+//        }
+//    }
+//    class Program
+//    {
+//        static void Main(string[] args)
+//        {
+//            Point pt1 = new Point();
+//            Console.WriteLine(pt1);
+//        }
+//    }
+//}
 
 
 
