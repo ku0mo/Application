@@ -1,4 +1,4 @@
-﻿// 2차원 배열
+﻿// 가변배열
 using System;
 namespace CSharpConsoleApp
 {
@@ -6,17 +6,61 @@ namespace CSharpConsoleApp
     {
         static void Main(string[] args)
         {
-            int[,] arr = new int[2, 3] { { 1, 2, 3 }, { 5, 6, 7 } };
+            int[][] arr = new int[2][];
 
-            for(int i = 0; i < 2; ++i)
+            arr[0] = new int[5] { 1, 2, 3, 4, 5 };
+            arr[1] = new int[3] { 4, 6, 8 };
+
+            for (int i = 0; i < arr.Length; ++i)
             {
-                for (int j = 0; j < 3; ++j)
-                    Console.Write("{0} ", arr[i, j]);
+                for (int j = 0; j < arr[i].Length; ++j)
+                    Console.Write("{0} ", arr[i][j]);
                 Console.WriteLine();
             }
         }
     }
 }
+
+
+//// 2차원 배열
+//using System;
+//namespace CSharpConsoleApp
+//{
+//    class Program
+//    {
+//        static void Main(string[] args)
+//        {
+//            int[,] arr = new int[2, 3] { { 1, 2, 3 }, { 5, 6, 7 } };
+
+//            for (int i = 0; i < arr.GetLength(0); ++i)
+//            {
+//                for (int j = 0; j < arr.GetLength(1); ++j)
+//                    Console.Write("{0} ", arr[i, j]);
+//                Console.WriteLine();
+//            }
+//        }
+//    }
+//}
+
+//// 2차원 배열
+//using System;
+//namespace CSharpConsoleApp
+//{
+//    class Program
+//    {
+//        static void Main(string[] args)
+//        {
+//            int[,] arr = new int[2, 3] { { 1, 2, 3 }, { 5, 6, 7 } };
+
+//            for(int i = 0; i < 2; ++i)
+//            {
+//                for (int j = 0; j < 3; ++j)
+//                    Console.Write("{0} ", arr[i, j]);
+//                Console.WriteLine();
+//            }
+//        }
+//    }
+//}
 
 
 //// foreach
