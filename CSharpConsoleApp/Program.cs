@@ -4,19 +4,60 @@ namespace CSharpConsoleApp
 {
     internal class Program
     {
+        /*
+         * class는 레퍼런스 복사
+         * struct 값 복사
+         */
         static void Main(string[] args)
         {
-            Point pt1 = new Point(2, 3);
-            Console.WriteLine(pt1);
+            //구조체는 이미 기본생성자가 예약되어 있기 때문에 만들어 낼 수 없다.
+            Point pt1; // 굳이 new 를 사용하지 않아도 된다는 뜻이다.
+            pt1.x = 2;
+            pt1.y = 3;
+            Point pt2 = pt1;
 
-            Point pt2 = new Point(3, 4);
+            Console.WriteLine(pt1);
             Console.WriteLine(pt2);
+            Console.WriteLine();
 
-            pt1 = pt2;
+            pt1.X = 5;
+            pt1.Y = 6;
             Console.WriteLine(pt1);
+            Console.WriteLine(pt2);
+            Console.WriteLine();
         }
     }
 }
+
+
+
+//using System;
+//using CSharpConsoleApp2;
+//namespace CSharpConsoleApp
+//{
+//    internal class Program
+//    {
+//        /*
+//         * class는 레퍼런스 복사
+//         * struct 값 복사
+//         */
+//        static void Main(string[] args)
+//        {
+//            Point pt1 = new Point(2, 3); //구조체일 때 객체를 생성한다는 의미에서 new를 사용, heap에 쓴다는 것이 아니다.
+//            Point pt2 = pt1;
+
+//            Console.WriteLine(pt1);
+//            Console.WriteLine(pt2);
+//            Console.WriteLine();
+
+//            pt1.X = 5;
+//            pt1.Y = 6;
+//            Console.WriteLine(pt1);
+//            Console.WriteLine(pt2);
+//            Console.WriteLine();
+//        }
+//    }
+//}
 
 
 
