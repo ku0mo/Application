@@ -1,49 +1,67 @@
-﻿// MyMath
+﻿// namespace - 직접 변수 앞에 사용
 using System;
 namespace CSharpConsoleApp
 {
-    class MyMath
-    {
-        public static int Abs(int input)
-        {
-            if (input < 0)
-                return -input;
-            else
-                return input;
-        }
-        public static double Abs(double input)
-        {
-            if (input < 0)
-                return -input;
-            else
-                return input;
-        }
-        public static long Abs(long input)
-        {
-            if (input < 0)
-                return -input;
-            else
-                return input;
-        }
-    }
-    class Program
+    internal class Program
     {
         static void Main(string[] args)
         {
-            //int
-            Console.WriteLine(MyMath.Abs(52));
-            Console.WriteLine(MyMath.Abs(-52));
-
-            //double
-            Console.WriteLine(MyMath.Abs(52.23953452345));
-            Console.WriteLine(MyMath.Abs(-52.239532342345));
-
-            //long
-            Console.WriteLine(MyMath.Abs(234554535345235));
-            Console.WriteLine(MyMath.Abs(-234554535345235));
+            CSharpConsoleApp2.Point pt = new CSharpConsoleApp2.Point();
+            pt.X = 10;
+            pt.Y = 20;
+            Console.WriteLine(pt);
         }
     }
 }
+
+
+
+//// MyMath
+//using System;
+//namespace CSharpConsoleApp
+//{
+//    class MyMath
+//    {
+//        public static int Abs(int input)
+//        {
+//            if (input < 0)
+//                return -input;
+//            else
+//                return input;
+//        }
+//        public static double Abs(double input)
+//        {
+//            if (input < 0)
+//                return -input;
+//            else
+//                return input;
+//        }
+//        public static long Abs(long input)
+//        {
+//            if (input < 0)
+//                return -input;
+//            else
+//                return input;
+//        }
+//    }
+//    class Program
+//    {
+//        static void Main(string[] args)
+//        {
+//            //int
+//            Console.WriteLine(MyMath.Abs(52));
+//            Console.WriteLine(MyMath.Abs(-52));
+
+//            //double
+//            Console.WriteLine(MyMath.Abs(52.23953452345));
+//            Console.WriteLine(MyMath.Abs(-52.239532342345));
+
+//            //long
+//            Console.WriteLine(MyMath.Abs(234554535345235));
+//            Console.WriteLine(MyMath.Abs(-234554535345235));
+//        }
+//    }
+//}
 
 
 //// 기본 생성자 
