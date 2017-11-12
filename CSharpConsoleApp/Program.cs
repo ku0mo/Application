@@ -1,42 +1,90 @@
-﻿// 기본 생성자 
+﻿// MyMath
 using System;
 namespace CSharpConsoleApp
 {
-    public class Point
+    class MyMath
     {
-        private int x, y;
-        public Point() { }
-        public Point(int _x, int _y)
+        public static int Abs(int input)
         {
-            x = _x;
-            y = _y;
+            if (input < 0)
+                return -input;
+            else
+                return input;
         }
-        public override string ToString() //모든 형식을 문자열로 바꿀 수 있는 override 사용, 문자열 더하기
+        public static double Abs(double input)
         {
-            return "(" + x + "," + y + ")"; //C#의 문자열은 변경 불가능한 문자열이다.
+            if (input < 0)
+                return -input;
+            else
+                return input;
         }
-        public int X
+        public static long Abs(long input)
         {
-            get { return x; }
-            set { x = value; }
-        }
-        public int Y
-        {
-            get { return y; }
-            set { y = value; }
+            if (input < 0)
+                return -input;
+            else
+                return input;
         }
     }
     class Program
     {
         static void Main(string[] args)
         {
-            //Point pt1 = new Point() { X = 2, Y = 3 };
-            Point pt1 = new Point { X = 2, Y = 3 };
+            //int
+            Console.WriteLine(MyMath.Abs(52));
+            Console.WriteLine(MyMath.Abs(-52));
 
-            Console.WriteLine("{0}, {1}", pt1.X, pt1.Y);
+            //double
+            Console.WriteLine(MyMath.Abs(52.23953452345));
+            Console.WriteLine(MyMath.Abs(-52.239532342345));
+
+            //long
+            Console.WriteLine(MyMath.Abs(234554535345235));
+            Console.WriteLine(MyMath.Abs(-234554535345235));
         }
     }
 }
+
+
+//// 기본 생성자 
+//using System;
+//namespace CSharpConsoleApp
+//{
+//    public class Point
+//    {
+//        private int x, y;
+//        public Point() { }
+//        public Point(int _x, int _y)
+//        {
+//            x = _x;
+//            y = _y;
+//        }
+//        public override string ToString() //모든 형식을 문자열로 바꿀 수 있는 override 사용, 문자열 더하기
+//        {
+//            return "(" + x + "," + y + ")"; //C#의 문자열은 변경 불가능한 문자열이다.
+//        }
+//        public int X
+//        {
+//            get { return x; }
+//            set { x = value; }
+//        }
+//        public int Y
+//        {
+//            get { return y; }
+//            set { y = value; }
+//        }
+//    }
+//    class Program
+//    {
+//        static void Main(string[] args)
+//        {
+//            //Point pt1 = new Point() { X = 2, Y = 3 };
+//            Point pt1 = new Point { X = 2, Y = 3 };
+
+//            Console.WriteLine("{0}, {1}", pt1.X, pt1.Y);
+//        }
+//    }
+//}
 
 
 //// getter, setter 하나로 프로퍼티
