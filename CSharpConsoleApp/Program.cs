@@ -1,5 +1,4 @@
-﻿// namespace - 직접 변수 앞에 사용
-using System;
+﻿using System;
 using CSharpConsoleApp2;
 namespace CSharpConsoleApp
 {
@@ -7,13 +6,37 @@ namespace CSharpConsoleApp
     {
         static void Main(string[] args)
         {
-            Point pt = new Point();
-            pt.X = 10;
-            pt.Y = 20;
-            Console.WriteLine(pt);
+            Point pt1 = new Point(2, 3);
+            Console.WriteLine(pt1);
+
+            Point pt2 = new Point(3, 4);
+            Console.WriteLine(pt2);
+
+            pt1 = pt2;
+            Console.WriteLine(pt1);
         }
     }
 }
+
+
+
+
+//// namespace - 직접 변수 앞에 사용
+//using System;
+//using CSharpConsoleApp2;
+//namespace CSharpConsoleApp
+//{
+//    internal class Program
+//    {
+//        static void Main(string[] args)
+//        {
+//            Point pt = new Point();
+//            pt.X = 10;
+//            pt.Y = 20;
+//            Console.WriteLine(pt);
+//        }
+//    }
+//}
 
 
 
