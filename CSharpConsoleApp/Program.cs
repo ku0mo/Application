@@ -1,12 +1,13 @@
 ﻿// namespace - 직접 변수 앞에 사용
 using System;
+using CSharpConsoleApp2;
 namespace CSharpConsoleApp
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            CSharpConsoleApp2.Point pt = new CSharpConsoleApp2.Point();
+            Point pt = new Point();
             pt.X = 10;
             pt.Y = 20;
             Console.WriteLine(pt);

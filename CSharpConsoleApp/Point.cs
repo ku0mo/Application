@@ -8,27 +8,55 @@ namespace CSharpConsoleApp2
 {
     public class Point
     {
-        private int x, y;
+        public int X { get; set; } //read write 둘 다 가능하게 하겠다.
+        public int Y { get; set; } //자동 property
 
-        public Point() { }
+        public Point()
+        {
+            X = 0;
+            Y = 0;
+        }
         public Point(int _x = 0, int _y = 0)
         {
-            x = _x;
-            y = _y;
+            X = _x;
+            Y = _y;
         }
         public override string ToString()
         {
             return "(" + X + "," + Y + ")";
         }
-        public int X
-        {
-            get { return x; }
-            set { x = value; }
-        }
-        public int Y
-        {
-            get { return y; }
-            set { y = value; }
-        }
     }
 }
+//using System;
+//using System.Collections.Generic;
+//using System.Linq;
+//using System.Text;
+
+//namespace CSharpConsoleApp2
+//{
+//    public class Point
+//    {
+//        private int x, y;
+
+//        public Point() { }
+//        public Point(int _x = 0, int _y = 0)
+//        {
+//            x = _x;
+//            y = _y;
+//        }
+//        public override string ToString()
+//        {
+//            return "(" + X + "," + Y + ")";
+//        }
+//        public int X
+//        {
+//            get { return x; }
+//            set { x = value; }
+//        }
+//        public int Y
+//        {
+//            get { return y; }
+//            set { y = value; }
+//        }
+//    }
+//}
