@@ -1,20 +1,76 @@
-﻿// foreach
+﻿// 2차원 배열
 using System;
 namespace CSharpConsoleApp
 {
     class Program
     {
-        static void Main(string[] args) // string 배열의 참조, 배열은 클래스면서 참조형식이다.
+        static void Main(string[] args)
         {
-            int[] arr = { 10, 20, 30, 40, 50 };
-            foreach (int data in arr) 
-                Console.WriteLine(data);
+            int[,] arr = new int[2, 3] { { 1, 2, 3 }, { 5, 6, 7 } };
 
-            //나열되어 있는 배열에서 각각 하나씩 가져와서 data 에 넣어라
-            //iterator를 사용할 일 없이 자료구조를 사용할 수 있는 장점!
+            for(int i = 0; i < 2; ++i)
+            {
+                for (int j = 0; j < 3; ++j)
+                    Console.Write("{0} ", arr[i, j]);
+                Console.WriteLine();
+            }
         }
     }
 }
+
+
+//// foreach
+//using System;
+//namespace CSharpConsoleApp
+//{
+//    class Program
+//    {
+//        static void Main(string[] args)
+//        {
+//            //object[] oarr = new object[5] { 1.2, 100, "ABC", 'A', true };
+//            object[] oarr = { 1.2, 100, "ABC", 'A', true }; //생략해서 사용가능!
+
+//            foreach (object o in oarr)
+//                Console.WriteLine(o.ToString());
+//        }
+//    }
+//}
+
+
+//// foreach
+//using System;
+//namespace CSharpConsoleApp
+//{
+//    class Program
+//    {
+//        static void Main(string[] args) 
+//        {
+//            //object[] oarr = new object[5] { 1.2, 100, "ABC", 'A', true };
+//            object[] oarr = { 1.2, 100, "ABC", 'A', true }; //생략해서 사용가능!
+
+//            foreach (object o in oarr)
+//                Console.WriteLine(o);
+//        }
+//    }
+//}
+
+//// foreach
+//using System;
+//namespace CSharpConsoleApp
+//{
+//    class Program
+//    {
+//        static void Main(string[] args) // string 배열의 참조, 배열은 클래스면서 참조형식이다.
+//        {
+//            int[] arr = { 10, 20, 30, 40, 50 };
+//            foreach (int data in arr) 
+//                Console.WriteLine(data);
+
+//            //나열되어 있는 배열에서 각각 하나씩 가져와서 data 에 넣어라
+//            //iterator를 사용할 일 없이 자료구조를 사용할 수 있는 장점!
+//        }
+//    }
+//}
 
 
 //// 배열
