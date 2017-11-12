@@ -1,25 +1,54 @@
-﻿// 가변배열
+﻿// Point 클래스
 using System;
 namespace CSharpConsoleApp
 {
+    class Point : Object //object가 생략되어됨 , 상속하겠다
+    {
+        private int x, y;
+        // ↑Field(정적속성)//↓Method(동적메소드)
+        public Point(int _x=0, int _y = 0)
+        {
+            x = _x;
+            y = _y;
+        }
+        public void Print()
+        {
+            Console.WriteLine("({0}, {1})", x, y);
+        }
+    }
     class Program
     {
         static void Main(string[] args)
         {
-            int[][] arr = new int[2][];
-
-            arr[0] = new int[5] { 1, 2, 3, 4, 5 };
-            arr[1] = new int[3] { 4, 6, 8 };
-
-            for (int i = 0; i < arr.Length; ++i)
-            {
-                for (int j = 0; j < arr[i].Length; ++j)
-                    Console.Write("{0} ", arr[i][j]);
-                Console.WriteLine();
-            }
+            Point pt1 = new Point();
+            pt1.Print();
         }
     }
 }
+
+
+//// 가변배열
+//using System;
+//namespace CSharpConsoleApp
+//{
+//    class Program
+//    {
+//        static void Main(string[] args)
+//        {
+//            int[][] arr = new int[2][];
+
+//            arr[0] = new int[5] { 1, 2, 3, 4, 5 };
+//            arr[1] = new int[3] { 4, 6, 8 };
+
+//            for (int i = 0; i < arr.Length; ++i)
+//            {
+//                for (int j = 0; j < arr[i].Length; ++j)
+//                    Console.Write("{0} ", arr[i][j]);
+//                Console.WriteLine();
+//            }
+//        }
+//    }
+//}
 
 
 //// 2차원 배열
