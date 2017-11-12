@@ -1,4 +1,4 @@
-﻿// getter, setter 
+﻿// getter, setter 하나로 프로퍼티
 using System;
 namespace CSharpConsoleApp
 {
@@ -14,11 +14,16 @@ namespace CSharpConsoleApp
         {
             return "(" + x + "," + y + ")"; //C#의 문자열은 변경 불가능한 문자열이다.
         }
-        public int GetX() { return x; }
-        public void SetX(int _x) { x = _x; }
-
-        public int GetY() { return y; }
-        public void SetY(int _y) { y = _y; }
+        public int X
+        {
+            get { return x; }
+            set { x = value; }
+        }
+        public int Y
+        {
+            get { return y; }
+            set { y = value; }
+        }
     }
     class Program
     {
@@ -26,12 +31,48 @@ namespace CSharpConsoleApp
         {
             Point pt1 = new Point();
 
-            pt1.SetX(1);
-            pt1.SetY(2);
-            Console.WriteLine("{0}, {1}", pt1.GetX(), pt1.GetY());
+            pt1.X = 1;
+            pt1.Y = 2;
+            Console.WriteLine("{0}, {1}", pt1.X, pt1.Y);
         }
     }
 }
+
+
+//// getter, setter 
+//using System;
+//namespace CSharpConsoleApp
+//{
+//    public class Point
+//    {
+//        private int x, y;
+//        public Point(int _x = 0, int _y = 0)
+//        {
+//            x = _x;
+//            y = _y;
+//        }
+//        public override string ToString() //모든 형식을 문자열로 바꿀 수 있는 override 사용, 문자열 더하기
+//        {
+//            return "(" + x + "," + y + ")"; //C#의 문자열은 변경 불가능한 문자열이다.
+//        }
+//        public int GetX() { return x; }
+//        public void SetX(int _x) { x = _x; }
+
+//        public int GetY() { return y; }
+//        public void SetY(int _y) { y = _y; }
+//    }
+//    class Program
+//    {
+//        static void Main(string[] args)
+//        {
+//            Point pt1 = new Point();
+
+//            pt1.SetX(1);
+//            pt1.SetY(2);
+//            Console.WriteLine("{0}, {1}", pt1.GetX(), pt1.GetY());
+//        }
+//    }
+//}
 
 
 //// override
