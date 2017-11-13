@@ -1,12 +1,34 @@
-﻿// params
-using System; 
+﻿// params 2
+using System;
 namespace CSharpConsoleApp
 {
+    class Point
+    {
+        private int x, y;
+
+        public Point() { }
+        public Point(int x = 0, int y = 0) { this.x = x; this.y = y; }
+
+        public int X
+        {
+            get { return x; }
+            set { x = value; }
+        }
+        public int Y
+        {
+            get { return y; }
+            set { y = value; }
+        }
+        public override string ToString()
+        {
+            return "(" + x + "," + y + ")";
+        }
+    }
     class Program
     {
-        static void Print(params int[] arr) //인수들의 목록을 배열에 받아서 사용할 수 있다.
+        static void Print(params object[] arr) //인수들의 목록을 배열에 받아서 사용할 수 있다.
         {
-            for(int i = 0; i < arr.Length; ++i)
+            for (int i = 0; i < arr.Length; ++i)
             {
                 Console.WriteLine("{0} ", arr[i]);
             }
@@ -14,16 +36,66 @@ namespace CSharpConsoleApp
         }
         static void Main(string[] args)
         {
-            Print(10, 20, 30);
-            Print(10, 20);
-            Print(10);
-
-            int[] ar = { 10, 20, 30, 40, 50 };
-            Print(ar); // params가 있기때문에 가능하다.
-            Print(new int[5] { 10, 20, 30, 40, 50 }); // 배열이라는 것을 명확하게 해주기위해 new int[5]를 붙여주면 됨.
+            Print("Hello!", 20, 'A', 5.55, new Point(2, 3));
         }
     }
 }
+
+
+//// params
+//using System;
+//namespace CSharpConsoleApp
+//{
+//    class Program
+//    {
+//        static void Print(params object[] arr) //인수들의 목록을 배열에 받아서 사용할 수 있다.
+//        {
+//            for (int i = 0; i < arr.Length; ++i)
+//            {
+//                Console.WriteLine("{0} ", arr[i]);
+//            }
+//            Console.WriteLine();
+//        }
+//        static void Main(string[] args)
+//        {
+//            Print(10, 20, 30);
+//            Print(10, 20);
+//            Print(10);
+
+//            int[] ar = { 10, 20, 30, 40, 50 };
+//            Print(ar); // params가 있기때문에 가능하다.
+//            Print(new int[5] { 10, 20, 30, 40, 50 }); // 배열이라는 것을 명확하게 해주기위해 new int[5]를 붙여주면 됨.
+//        }
+//    }
+//}
+
+
+//// params
+//using System; 
+//namespace CSharpConsoleApp
+//{
+//    class Program
+//    {
+//        static void Print(params int[] arr) //인수들의 목록을 배열에 받아서 사용할 수 있다.
+//        {
+//            for(int i = 0; i < arr.Length; ++i)
+//            {
+//                Console.WriteLine("{0} ", arr[i]);
+//            }
+//            Console.WriteLine();
+//        }
+//        static void Main(string[] args)
+//        {
+//            Print(10, 20, 30);
+//            Print(10, 20);
+//            Print(10);
+
+//            int[] ar = { 10, 20, 30, 40, 50 };
+//            Print(ar); // params가 있기때문에 가능하다.
+//            Print(new int[5] { 10, 20, 30, 40, 50 }); // 배열이라는 것을 명확하게 해주기위해 new int[5]를 붙여주면 됨.
+//        }
+//    }
+//}
 
 
 //using System;
