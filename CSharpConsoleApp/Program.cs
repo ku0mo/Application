@@ -1,4 +1,4 @@
-﻿// 제네릭 vs 비제네릭
+﻿// down, up casting
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -9,31 +9,108 @@ namespace CSharpConsoleApp
 {
     class Program
     {
+        class Point
+        {
+            int x, y;
+            public Point(int _x = 0, int _y = 0)
+            {
+                x = _x;
+                y = _y;
+            }
+            public override string ToString()
+            {
+                return "(" + x + "," + y + ")";
+            }
+            public int X { get { return x; } }
+        }
         static void Main(string[] args)
         {
-            ArrayList arr1 = new ArrayList(); //비제너릭
-            List<int> arr2 = new List<int>(); //제너릭 컬렉션
+            int n = 100;
+            Console.WriteLine("{0} ", n);
 
-            arr1.Add(10);
-            arr1.Add(20);
-            arr1.Add(30);
-
-            arr2.Add(10);
-            arr2.Add(20);
-            arr2.Add(30);
-
-            for (int i = 0; i < arr1.Count; ++i)
-                Console.Write("{0} ", arr1[i]);
-            Console.WriteLine();
-            int k = (int)arr1[0];// object 형식을 int형으로 변환해야 한다.
-
-            for (int i = 0; i < arr2.Count; ++i)
-                Console.WriteLine("{0} ", arr2[i]);
-            Console.WriteLine();
-            int m = arr2[0];
+            object o = (object)n; // 명시적인 up_casting
+            int m = (int)o; //down_casting
+            Console.WriteLine("{0} ", m);
         }
     }
 }
+
+
+
+
+//// 제네릭 vs 비제네릭
+//using System;
+//using System.Collections;
+//using System.Collections.Generic;
+//using System.Linq;
+//using System.Text;
+
+//namespace CSharpConsoleApp
+//{
+//    class Program
+//    {
+//        class Point
+//        {
+//            int x, y;
+//            public Point(int _x = 0, int _y = 0)
+//            {
+//                x = _x;
+//                y = _y;
+//            }
+//            public override string ToString()
+//            {
+//                return "(" + x + "," + y + ")";
+//            }
+//        }
+//        static void Main(string[] args)
+//        {
+//            Point pt1 = new Point(2, 3);
+//            Console.WriteLine(pt1.ToString());
+
+//            object o = pt1;
+//            Console.WriteLine(o.ToString());
+//        }
+//    }
+//}
+
+
+
+//// 제네릭 vs 비제네릭
+//using System;
+//using System.Collections;
+//using System.Collections.Generic;
+//using System.Linq;
+//using System.Text;
+
+//namespace CSharpConsoleApp
+//{
+//    class Program
+//    {
+//        static void Main(string[] args)
+//        {
+//            ArrayList arr1 = new ArrayList(); //비제너릭
+//            List<int> arr2 = new List<int>(); //제너릭 컬렉션
+
+//            arr1.Add(10);
+//            arr1.Add(20);
+//            arr1.Add(30);
+
+//            arr2.Add(10);
+//            arr2.Add(20);
+//            arr2.Add(30);
+
+//            for (int i = 0; i < arr1.Count; ++i)
+//                Console.Write("{0} ", arr1[i]);
+//            Console.WriteLine();
+//            int k = (int)arr1[0];// object 형식을 int형으로 변환해야 한다.
+
+//            for (int i = 0; i < arr2.Count; ++i)
+//                Console.WriteLine("{0} ", arr2[i]);
+//            Console.WriteLine();
+//            int m = arr2[0];
+//        }
+//    }
+//}
 
 
 //// is 키워드 2
