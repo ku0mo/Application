@@ -1,43 +1,81 @@
-﻿// is 키워드 2
+﻿// 제네릭 vs 비제네릭
 using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
 namespace CSharpConsoleApp
 {
-    public struct Point //struct는 일반적으로 필드를 public으로 만든다. 직접 초기화하기위해서
-    {
-        public int x;
-        public int X { get { return x; } set { x = value; } }
-        public int y;
-        public int Y { get { return y; } set { y = value; } }
-
-        public Point(int _x = 0, int _y = 0)
-        {
-            x = _x;
-            y = _y;
-        }
-        public override string ToString()
-        {
-            return "(" + x + "," + Y + ")";
-        }
-    }
     class Program
     {
-        static void Print(params object[] arr) // object 배열이기때문에 모든 형식으로 변환이 되어서 이러한 장점이 있음.
-        {
-            for (int i = 0; i < arr.Length; ++i)
-            {
-                //as 키워는 참조형식에만 값 형식인 struct는 사용안됨
-                if (arr[i] is Point)
-                    Console.WriteLine("{0}, {1}", ((Point)arr[i]).X + 1, ((Point)arr[i]).Y + 1);
-                else
-                    Console.WriteLine("{0} ", arr[i]);
-            }
-        }
         static void Main(string[] args)
         {
-            Print("Hello!", 100, new Point(2,3), "ABC", 200, 300);
+            ArrayList arr1 = new ArrayList(); //비제너릭
+            List<int> arr2 = new List<int>(); //제너릭 컬렉션
+
+            arr1.Add(10);
+            arr1.Add(20);
+            arr1.Add(30);
+
+            arr2.Add(10);
+            arr2.Add(20);
+            arr2.Add(30);
+
+            for (int i = 0; i < arr1.Count; ++i)
+                Console.Write("{0} ", arr1[i]);
+            Console.WriteLine();
+            int k = (int)arr1[0];// object 형식을 int형으로 변환해야 한다.
+
+            for (int i = 0; i < arr2.Count; ++i)
+                Console.WriteLine("{0} ", arr2[i]);
+            Console.WriteLine();
+            int m = arr2[0];
         }
     }
 }
+
+
+//// is 키워드 2
+//using System;
+//namespace CSharpConsoleApp
+//{
+//    public struct Point //struct는 일반적으로 필드를 public으로 만든다. 직접 초기화하기위해서
+//    {
+//        public int x;
+//        public int X { get { return x; } set { x = value; } }
+//        public int y;
+//        public int Y { get { return y; } set { y = value; } }
+
+//        public Point(int _x = 0, int _y = 0)
+//        {
+//            x = _x;
+//            y = _y;
+//        }
+//        public override string ToString()
+//        {
+//            return "(" + x + "," + Y + ")";
+//        }
+//    }
+//    class Program
+//    {
+//        static void Print(params object[] arr) // object 배열이기때문에 모든 형식으로 변환이 되어서 이러한 장점이 있음.
+//        {
+//            for (int i = 0; i < arr.Length; ++i)
+//            {
+//                //as 키워는 참조형식에만 값 형식인 struct는 사용안됨
+//                if (arr[i] is Point)
+//                    Console.WriteLine("{0}, {1}", ((Point)arr[i]).X + 1, ((Point)arr[i]).Y + 1);
+//                else
+//                    Console.WriteLine("{0} ", arr[i]);
+//            }
+//        }
+//        static void Main(string[] args)
+//        {
+//            Print("Hello!", 100, new Point(2,3), "ABC", 200, 300);
+//        }
+//    }
+//}
 
 
 
