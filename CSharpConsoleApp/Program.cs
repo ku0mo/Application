@@ -1,26 +1,22 @@
-﻿// as 키워드
+﻿// is 키워드 2
 using System;
 namespace CSharpConsoleApp
 {
-    public class Point
+    public struct Point //struct는 일반적으로 필드를 public으로 만든다. 직접 초기화하기위해서
     {
-        public int x, y; //struct는 일반적으로 필드를 public 으로 만든다. 직접 초기화하기 위해
+        public int x;
+        public int X { get { return x; } set { x = value; } }
+        public int y;
+        public int Y { get { return y; } set { y = value; } }
 
-        public Point(int _x = 0 , int _y = 0) { x = _x; y = _y; }
-
-        public int X
+        public Point(int _x = 0, int _y = 0)
         {
-            get { return x; }
-            set { x = value; }
-        }
-        public int Y
-        {
-            get { return y; }
-            set { y = value; }
+            x = _x;
+            y = _y;
         }
         public override string ToString()
         {
-            return "(" + x + "," + y + ")";
+            return "(" + x + "," + Y + ")";
         }
     }
     class Program
@@ -29,9 +25,9 @@ namespace CSharpConsoleApp
         {
             for (int i = 0; i < arr.Length; ++i)
             {
-                Point pt = arr[i] as Point;
-                if (pt != null)
-                    Console.WriteLine("{0}, {1}", pt.X + 1, pt.Y + 1);
+                //as 키워는 참조형식에만 값 형식인 struct는 사용안됨
+                if (arr[i] is Point)
+                    Console.WriteLine("{0}, {1}", ((Point)arr[i]).X + 1, ((Point)arr[i]).Y + 1);
                 else
                     Console.WriteLine("{0} ", arr[i]);
             }
