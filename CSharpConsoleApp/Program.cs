@@ -1,4 +1,4 @@
-﻿// fuction overroading
+﻿// params
 using System; 
 namespace CSharpConsoleApp
 {
