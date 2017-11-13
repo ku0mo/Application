@@ -1,33 +1,109 @@
 ﻿using System;
-using CSharpConsoleApp2;
 namespace CSharpConsoleApp
 {
-    internal class Program
+    class Program
     {
-        /*
-         * class는 레퍼런스 복사
-         * struct 값 복사
-         */
+        static void Add(int a, int b, out int result)
+        {
+            result =  a + b;
+        }
         static void Main(string[] args)
         {
-            //구조체는 이미 기본생성자가 예약되어 있기 때문에 만들어 낼 수 없다.
-            Point pt1; // 굳이 new 를 사용하지 않아도 된다는 뜻이다.
-            pt1.x = 2;
-            pt1.y = 3;
-            Point pt2 = pt1;
+            int a = 10; //int형은 모두 값 객체 => stack에서 stack을 복사
+            int b = 20;
 
-            Console.WriteLine(pt1);
-            Console.WriteLine(pt2);
-            Console.WriteLine();
+            int result;
+            Add(a, b, out result);
 
-            pt1.X = 5;
-            pt1.Y = 6;
-            Console.WriteLine(pt1);
-            Console.WriteLine(pt2);
-            Console.WriteLine();
+            Console.WriteLine("result = {0}", result);
         }
     }
 }
+
+
+//using System;
+//namespace CSharpConsoleApp
+//{
+//    class Program
+//    {
+//        static int Add(int a, int b)
+//        {
+//            return a + b;
+//        }
+//        static void Main(string[] args)
+//        {
+//            int a = 10; //int형은 모두 값 객체 => stack에서 stack을 복사
+//            int b = 20;
+
+//            int result = Add(a, b);
+
+//            Console.WriteLine("result = {0}", result);
+//        }
+//    }
+//}
+
+
+
+//using System;
+//namespace CSharpConsoleApp
+//{
+//    class Program
+//    {
+//        static void Print(int a, int b)
+//        {
+//            Console.WriteLine("{0}, {1}", a, b);
+//        }
+//        static void Swap(ref int a, ref int b)
+//        {
+//            int temp = a;
+//            a = b;
+//            b = temp;
+//        }
+//        static void Main(string[] args)
+//        {
+//            int a = 10; //int형은 모두 값 객체 => stack에서 stack을 복사
+//            int b = 20;
+
+//            Print(a, b);
+//            Swap(ref a, ref b);
+//            Print(a, b);
+//        }
+//    }
+//}
+
+
+
+
+//using System;
+//using CSharpConsoleApp2;
+//namespace CSharpConsoleApp
+//{
+//    internal class Program
+//    {
+//        /*
+//         * class는 레퍼런스 복사
+//         * struct 값 복사
+//         */
+//        static void Main(string[] args)
+//        {
+//            //구조체는 이미 기본생성자가 예약되어 있기 때문에 만들어 낼 수 없다.
+//            Point pt1; // 굳이 new 를 사용하지 않아도 된다는 뜻이다.
+//            pt1.x = 2;
+//            pt1.y = 3;
+//            Point pt2 = pt1;
+
+//            Console.WriteLine(pt1);
+//            Console.WriteLine(pt2);
+//            Console.WriteLine();
+
+//            pt1.X = 5;
+//            pt1.Y = 6;
+//            Console.WriteLine(pt1);
+//            Console.WriteLine(pt2);
+//            Console.WriteLine();
+//        }
+//    }
+//}
 
 
 
