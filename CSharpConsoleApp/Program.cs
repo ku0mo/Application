@@ -1,4 +1,4 @@
-﻿// params 2
+﻿// is 키워드
 using System;
 namespace CSharpConsoleApp
 {
@@ -26,20 +26,72 @@ namespace CSharpConsoleApp
     }
     class Program
     {
-        static void Print(params object[] arr) //인수들의 목록을 배열에 받아서 사용할 수 있다.
+        static void Print(params object[] arr) // object 배열이기때문에 모든 형식으로 변환이 되어서 이러한 장점이 있음.
         {
             for (int i = 0; i < arr.Length; ++i)
             {
                 Console.WriteLine("{0} ", arr[i]);
             }
             Console.WriteLine();
+
+            int sum = 0;
+            for (int i = 0; i < arr.Length; ++i)
+            {
+                if (arr[i] is int) //형식 변환 연산자
+                    sum += (int)arr[i]; //object->int 로 다운 캐스팅하여 저장.
+            }
+            Console.WriteLine("sum : {0}", sum);
         }
         static void Main(string[] args)
         {
-            Print("Hello!", 20, 'A', 5.55, new Point(2, 3));
+            Print("Hello!", 100, "ABC", 200, 300);
         }
     }
 }
+
+
+//// params 2
+//using System;
+//namespace CSharpConsoleApp
+//{
+//    class Point
+//    {
+//        private int x, y;
+
+//        public Point() { }
+//        public Point(int x = 0, int y = 0) { this.x = x; this.y = y; }
+
+//        public int X
+//        {
+//            get { return x; }
+//            set { x = value; }
+//        }
+//        public int Y
+//        {
+//            get { return y; }
+//            set { y = value; }
+//        }
+//        public override string ToString()
+//        {
+//            return "(" + x + "," + y + ")";
+//        }
+//    }
+//    class Program
+//    {
+//        static void Print(params object[] arr) // object 배열이기때문에 모든 형식으로 변환이 되어서 이러한 장점이 있음.
+//        {
+//            for (int i = 0; i < arr.Length; ++i)
+//            {
+//                Console.WriteLine("{0} ", arr[i]);
+//            }
+//            Console.WriteLine();
+//        }
+//        static void Main(string[] args)
+//        {
+//            Print("Hello!", 20, 'A', 5.55, new Point(2, 3));
+//        }
+//    }
+//}
 
 
 //// params
