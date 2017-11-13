@@ -1,13 +1,12 @@
-﻿// is 키워드
+﻿// as 키워드
 using System;
 namespace CSharpConsoleApp
 {
-    class Point
+    public class Point
     {
-        private int x, y;
+        public int x, y; //struct는 일반적으로 필드를 public 으로 만든다. 직접 초기화하기 위해
 
-        public Point() { }
-        public Point(int x = 0, int y = 0) { this.x = x; this.y = y; }
+        public Point(int _x = 0 , int _y = 0) { x = _x; y = _y; }
 
         public int X
         {
@@ -30,24 +29,72 @@ namespace CSharpConsoleApp
         {
             for (int i = 0; i < arr.Length; ++i)
             {
-                Console.WriteLine("{0} ", arr[i]);
+                Point pt = arr[i] as Point;
+                if (pt != null)
+                    Console.WriteLine("{0}, {1}", pt.X + 1, pt.Y + 1);
+                else
+                    Console.WriteLine("{0} ", arr[i]);
             }
-            Console.WriteLine();
-
-            int sum = 0;
-            for (int i = 0; i < arr.Length; ++i)
-            {
-                if (arr[i] is int) //형식 변환 연산자
-                    sum += (int)arr[i]; //object->int 로 다운 캐스팅하여 저장.
-            }
-            Console.WriteLine("sum : {0}", sum);
         }
         static void Main(string[] args)
         {
-            Print("Hello!", 100, "ABC", 200, 300);
+            Print("Hello!", 100, new Point(2,3), "ABC", 200, 300);
         }
     }
 }
+
+
+
+//// is 키워드
+//using System;
+//namespace CSharpConsoleApp
+//{
+//    class Point
+//    {
+//        private int x, y;
+
+//        public Point() { }
+//        public Point(int x = 0, int y = 0) { this.x = x; this.y = y; }
+
+//        public int X
+//        {
+//            get { return x; }
+//            set { x = value; }
+//        }
+//        public int Y
+//        {
+//            get { return y; }
+//            set { y = value; }
+//        }
+//        public override string ToString()
+//        {
+//            return "(" + x + "," + y + ")";
+//        }
+//    }
+//    class Program
+//    {
+//        static void Print(params object[] arr) // object 배열이기때문에 모든 형식으로 변환이 되어서 이러한 장점이 있음.
+//        {
+//            for (int i = 0; i < arr.Length; ++i)
+//            {
+//                Console.WriteLine("{0} ", arr[i]);
+//            }
+//            Console.WriteLine();
+
+//            int sum = 0;
+//            for (int i = 0; i < arr.Length; ++i)
+//            {
+//                if (arr[i] is int) //형식 변환 연산자
+//                    sum += (int)arr[i]; //object->int 로 다운 캐스팅하여 저장.
+//            }
+//            Console.WriteLine("sum : {0}", sum);
+//        }
+//        static void Main(string[] args)
+//        {
+//            Print("Hello!", 100, "ABC", 200, 300);
+//        }
+//    }
+//}
 
 
 //// params 2
