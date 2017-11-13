@@ -4,23 +4,23 @@ namespace CSharpConsoleApp
 {
     class Program
     {
-        static void Print(int a)
+        static void Print(params int[] arr) //인수들의 목록을 배열에 받아서 사용할 수 있다.
         {
-            Console.WriteLine("{0} ", a);
-        }
-        static void Print(int a, int b)
-        {
-            Console.WriteLine("{0}, {1} ", a, b);
-        }
-        static void Print(int a, int b , int c)
-        {
-            Console.WriteLine("{0}, {1}, {2}", a, b, c);
+            for(int i = 0; i < arr.Length; ++i)
+            {
+                Console.WriteLine("{0} ", arr[i]);
+            }
+            Console.WriteLine();
         }
         static void Main(string[] args)
         {
             Print(10, 20, 30);
             Print(10, 20);
             Print(10);
+
+            int[] ar = { 10, 20, 30, 40, 50 };
+            Print(ar); // params가 있기때문에 가능하다.
+            Print(new int[5] { 10, 20, 30, 40, 50 }); // 배열이라는 것을 명확하게 해주기위해 new int[5]를 붙여주면 됨.
         }
     }
 }
