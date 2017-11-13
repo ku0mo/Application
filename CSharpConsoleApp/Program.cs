@@ -3,22 +3,45 @@ namespace CSharpConsoleApp
 {
     class Program
     {
-        static void Add(int a, int b, out int result)
+        static void Add(int a, int b, ref int result)
         {
-            result =  a + b;
+            result = a + b;
         }
         static void Main(string[] args)
         {
             int a = 10; //int형은 모두 값 객체 => stack에서 stack을 복사
             int b = 20;
 
-            int result;
-            Add(a, b, out result);
+            int result = 0; //ref는 초기화가 되어 있어야 Read, Write를 할 수 있다.
+            Add(a, b, ref result);
 
             Console.WriteLine("result = {0}", result);
         }
     }
 }
+
+
+//using System;
+//namespace CSharpConsoleApp
+//{
+//    class Program
+//    {
+//        static void Add(int a, int b, out int result)
+//        {
+//            result =  a + b;
+//        }
+//        static void Main(string[] args)
+//        {
+//            int a = 10; //int형은 모두 값 객체 => stack에서 stack을 복사
+//            int b = 20;
+
+//            int result;
+//            Add(a, b, out result);
+
+//            Console.WriteLine("result = {0}", result);
+//        }
+//    }
+//}
 
 
 //using System;
