@@ -1,4 +1,4 @@
-﻿// Array
+﻿// GetHashCode나 Equal 둘중에 하나가 재정의 되면 나머지 하나도 재정의 되어야 한다.
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -9,25 +9,99 @@ namespace CSharpConsoleApp
 {
     class Program
     {
-        static void PrintArray(int[] arr)
-        {
-            for (int i = 0; i < arr.Length; ++i)
-            {
-                Console.WriteLine("{0,4}", arr[i]);
-            }
-            Console.WriteLine();
-        }
         static void Main(string[] args)
         {
-            int[] arr = { 20, 40, 10, 50, 30 };
-            PrintArray(arr);
-            Array.Sort(arr);
-            PrintArray(arr);
-            Array.Clear(arr, 0, arr.Length); //모든 원소를 0으로 초기화. 0 ~ length까지
-            PrintArray(arr);
+            int n1 = 100;
+            int n2 = 200;
+            double d1 = 100;
+            double d2 = 200;
+
+            Console.WriteLine(n1.GetHashCode());
+            Console.WriteLine(n2.GetHashCode());
+            Console.WriteLine(d1.GetHashCode());
+            Console.WriteLine(d2.GetHashCode());
         }
     }
 }
+
+
+//// Array
+//using System;
+//using System.Collections;
+//using System.Collections.Generic;
+//using System.Linq;
+//using System.Text;
+
+//namespace CSharpConsoleApp
+//{
+//    class Point
+//    {
+//        public int X { get; set; }  
+//        public int Y { get; set; }
+//        public override string ToString()
+//        {
+//            return "(" + X + "," + Y + ")";
+//        }
+//    }
+//    class Program
+//    {
+//        static void PrintArray(int[] arr)
+//        {
+//            for (int i = 0; i < arr.Length; ++i)
+//            {
+//                Console.WriteLine("{0,4}", arr[i]);
+//            }
+//            Console.WriteLine();
+//        }
+//        static void Main(string[] args)
+//        {
+//            Point[] arr = {
+//                new Point() { X = 2, Y = 3 },
+//                new Point() { X = 7, Y = 8 },
+//                new Point() { X = 8, Y = 7 },
+//                new Point() { X = 2, Y = 1 },
+//                new Point() { X = 1, Y =2 }
+//                           };
+//            PrintArray(arr);
+//            Array.Sort(arr); // 비교할 때 사용하는 interface가 있음
+//            PrintArray(arr);
+//            Array.Clear(arr, 0, arr.Length); //모든 원소를 0으로 초기화. 0 ~ length까지
+//            PrintArray(arr);
+//        }
+//    }
+//}
+
+
+//// Array
+//using System;
+//using System.Collections;
+//using System.Collections.Generic;
+//using System.Linq;
+//using System.Text;
+
+//namespace CSharpConsoleApp
+//{
+//    class Program
+//    {
+//        static void PrintArray(int[] arr)
+//        {
+//            for (int i = 0; i < arr.Length; ++i)
+//            {
+//                Console.WriteLine("{0,4}", arr[i]);
+//            }
+//            Console.WriteLine();
+//        }
+//        static void Main(string[] args)
+//        {
+//            int[] arr = { 20, 40, 10, 50, 30 };
+//            PrintArray(arr);
+//            Array.Sort(arr);
+//            PrintArray(arr);
+//            Array.Clear(arr, 0, arr.Length); //모든 원소를 0으로 초기화. 0 ~ length까지
+//            PrintArray(arr);
+//        }
+//    }
+//}
 
 
 //// Array
