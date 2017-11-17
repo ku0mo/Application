@@ -1,4 +1,4 @@
-﻿// down, up casting
+﻿// Anonymous
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -9,31 +9,141 @@ namespace CSharpConsoleApp
 {
     class Program
     {
-        class Point
-        {
-            int x, y;
-            public Point(int _x = 0, int _y = 0)
-            {
-                x = _x;
-                y = _y;
-            }
-            public override string ToString()
-            {
-                return "(" + x + "," + y + ")";
-            }
-            public int X { get { return x; } }
-        }
         static void Main(string[] args)
         {
-            int n = 100;
-            Console.WriteLine("{0} ", n);
+            var pt1 = new { X = 2, Y = 3 }; //새로운 형식이 만들어진다.
+            Console.WriteLine(pt1);
+            Console.WriteLine(pt1.GetType().Name);
+            Console.WriteLine("{0}, {1}", pt1.X, pt1.Y);
 
-            object o = (object)n; // 명시적인 up_casting
-            int m = (int)o; //down_casting
-            Console.WriteLine("{0} ", m);
+            Console.WriteLine();
+
+            var pt2 = pt1;
+            Console.WriteLine(pt2);
+            Console.WriteLine(pt2.GetType().Name);
+            Console.WriteLine("{0}, {1}", pt2.X, pt2.Y);
         }
     }
 }
+
+
+//// Anonymous
+//using System;
+//using System.Collections;
+//using System.Collections.Generic;
+//using System.Linq;
+//using System.Text;
+
+//namespace CSharpConsoleApp
+//{
+//    class Point
+//    {
+//        public int X { get; set; }
+//        public int Y { get; set; }
+//    }
+//    class Program
+//    {
+//        static void Main(string[] args)
+//        {
+//            Point pt1 = new Point() { X = 2, Y = 3 };
+//            Console.WriteLine(pt1);
+//            Console.WriteLine(pt1.GetType().Name);
+//            Console.WriteLine("{0}, {1}", pt1.X, pt1.Y);
+//        }
+//    }
+//}
+
+
+//// Anonymous
+//using System;
+//using System.Collections;
+//using System.Collections.Generic;
+//using System.Linq;
+//using System.Text;
+
+//namespace CSharpConsoleApp
+//{
+//    class Point { }
+//    class Program
+//    {
+//        static void Main(string[] args)
+//        {
+//            var d = new { Int = 100, Name = "data", Pt = new Point() };
+
+//            Console.WriteLine(d);
+//            Console.WriteLine(d.GetType().Name);
+//            Console.WriteLine("{0}, {1}, {2}", d.Int, d.Name, d.Pt);
+//        }
+//    }
+//}
+
+
+//// Anonymous
+//using System;
+//using System.Collections;
+//using System.Collections.Generic;
+//using System.Linq;
+//using System.Text;
+
+//namespace CSharpConsoleApp
+//{
+//    class Point { }
+//    class Data
+//    {
+//        public int Int { get; set; }
+//        public string Name { get; set; }
+//        public Point Pt { get; set; }
+//    }
+//    class Program
+//    {
+//        static void Main(string[] args)
+//        {
+//            Data d = new Data(){ Int = 100, Name = "data", Pt = new Point() };
+
+//            Console.WriteLine(d);
+//            Console.WriteLine("{0}, {1}, {2}", d.Int, d.Name, d.Pt);
+//        }
+//    }
+//}
+
+
+
+//// down, up casting
+//using System;
+//using System.Collections;
+//using System.Collections.Generic;
+//using System.Linq;
+//using System.Text;
+
+//namespace CSharpConsoleApp
+//{
+//    class Program
+//    {
+//        class Point
+//        {
+//            int x, y;
+//            public Point(int _x = 0, int _y = 0)
+//            {
+//                x = _x;
+//                y = _y;
+//            }
+//            public override string ToString()
+//            {
+//                return "(" + x + "," + y + ")";
+//            }
+//            public int X { get { return x; } }
+//        }
+//        static void Main(string[] args)
+//        {
+//            int n = 100;
+//            Console.WriteLine("{0} ", n);
+
+//            object o = (object)n; // 명시적인 up_casting
+//            int m = (int)o; //down_casting
+//            Console.WriteLine("{0} ", m);
+//        }
+//    }
+//}
 
 
 
