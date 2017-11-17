@@ -11,7 +11,7 @@ namespace CSharpConsoleApp
     {
         static void PrintArray(int[] arr)
         {
-            for(int i =0; i < arr.Length; ++i)
+            for (int i = 0; i < arr.Length; ++i)
             {
                 Console.WriteLine("{0,4}", arr[i]);
             }
@@ -19,11 +19,40 @@ namespace CSharpConsoleApp
         }
         static void Main(string[] args)
         {
-            int[] arr = { 10, 20, 30, 40, 50 };
+            int[] arr = { 20, 40, 10, 50, 30 };
+            PrintArray(arr);
+            Array.Sort(arr);
             PrintArray(arr);
         }
     }
 }
+
+//// Array
+//using System;
+//using System.Collections;
+//using System.Collections.Generic;
+//using System.Linq;
+//using System.Text;
+
+//namespace CSharpConsoleApp
+//{
+//    class Program
+//    {
+//        static void PrintArray(int[] arr)
+//        {
+//            for(int i =0; i < arr.Length; ++i)
+//            {
+//                Console.WriteLine("{0,4}", arr[i]);
+//            }
+//            Console.WriteLine();
+//        }
+//        static void Main(string[] args)
+//        {
+//            int[] arr = { 10, 20, 30, 40, 50 };
+//            PrintArray(arr);
+//        }
+//    }
+//}
 
 
 
