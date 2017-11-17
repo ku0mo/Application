@@ -1,4 +1,4 @@
-﻿// GetHashCode나 Equal 둘중에 하나가 재정의 되면 나머지 하나도 재정의 되어야 한다.
+﻿// Equals, ReferenceEquals
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -7,22 +7,97 @@ using System.Text;
 
 namespace CSharpConsoleApp
 {
+    class Point
+    {
+        public int X { get; set; }
+        public int Y { get; set; }
+        public Point(int _x, int _y)
+        {
+            X = _x;
+            Y = _y;
+        }
+        public override string ToString()
+        {
+            return X + "," + Y;
+        }
+    }
     class Program
     {
         static void Main(string[] args)
         {
-            int n1 = 100;
-            int n2 = 200;
-            double d1 = 100;
-            double d2 = 200;
+            Point pt1 = new Point(2, 3);
+            Point pt2 = new Point(2, 3);
 
-            Console.WriteLine(n1.GetHashCode());
-            Console.WriteLine(n2.GetHashCode());
-            Console.WriteLine(d1.GetHashCode());
-            Console.WriteLine(d2.GetHashCode());
+            Console.WriteLine("{0}, {1}", pt1, pt2);
+
+            if (pt1.Equals(pt1))
+                Console.WriteLine("true");
+            else
+                Console.WriteLine("false");
+
+            if (Point.Equals(pt1, pt2))
+                Console.WriteLine("true");
+            else
+                Console.WriteLine("false");
+
+            if (Point.ReferenceEquals(pt1, pt2))
+                Console.WriteLine("true");
+            else
+                Console.WriteLine("false");
         }
     }
 }
+
+//// GetHashCode나 Equal 둘중에 하나가 재정의 되면 나머지 하나도 재정의 되어야 한다.
+//using System;
+//using System.Collections;
+//using System.Collections.Generic;
+//using System.Linq;
+//using System.Text;
+
+//namespace CSharpConsoleApp
+//{
+//    class Program
+//    {
+//        static void Main(string[] args)
+//        {
+//            int n1 = 100;
+//            int n2 = 100;
+
+//            if (n1.Equals(n2))
+//                Console.WriteLine("true");
+//            if (n1.GetHashCode() == n2.GetHashCode())
+//                Console.WriteLine("true");
+//        }
+//    }
+//}
+
+
+//// GetHashCode나 Equal 둘중에 하나가 재정의 되면 나머지 하나도 재정의 되어야 한다.
+//using System;
+//using System.Collections;
+//using System.Collections.Generic;
+//using System.Linq;
+//using System.Text;
+
+//namespace CSharpConsoleApp
+//{
+//    class Program
+//    {
+//        static void Main(string[] args)
+//        {
+//            int n1 = 100;
+//            int n2 = 200;
+//            double d1 = 100;
+//            double d2 = 200;
+
+//            Console.WriteLine(n1.GetHashCode());
+//            Console.WriteLine(n2.GetHashCode());
+//            Console.WriteLine(d1.GetHashCode());
+//            Console.WriteLine(d2.GetHashCode());
+//        }
+//    }
+//}
 
 
 //// Array
