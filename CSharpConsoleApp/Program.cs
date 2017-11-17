@@ -1,4 +1,4 @@
-﻿// Anonymous
+﻿// Array
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -9,22 +9,51 @@ namespace CSharpConsoleApp
 {
     class Program
     {
+        static void PrintArray(int[] arr)
+        {
+            for(int i =0; i < arr.Length; ++i)
+            {
+                Console.WriteLine("{0,4}", arr[i]);
+            }
+            Console.WriteLine();
+        }
         static void Main(string[] args)
         {
-            var pt1 = new { X = 2, Y = 3 }; //새로운 형식이 만들어진다.
-            Console.WriteLine(pt1);
-            Console.WriteLine(pt1.GetType().Name);
-            Console.WriteLine("{0}, {1}", pt1.X, pt1.Y);
-
-            Console.WriteLine();
-
-            var pt2 = pt1;
-            Console.WriteLine(pt2);
-            Console.WriteLine(pt2.GetType().Name);
-            Console.WriteLine("{0}, {1}", pt2.X, pt2.Y);
+            int[] arr = { 10, 20, 30, 40, 50 };
+            PrintArray(arr);
         }
     }
 }
+
+
+
+//// Anonymous
+//using System;
+//using System.Collections;
+//using System.Collections.Generic;
+//using System.Linq;
+//using System.Text;
+
+//namespace CSharpConsoleApp
+//{
+//    class Program
+//    {
+//        static void Main(string[] args)
+//        {
+//            var pt1 = new { X = 2, Y = 3 }; //새로운 형식이 만들어진다.
+//            Console.WriteLine(pt1);
+//            Console.WriteLine(pt1.GetType().Name);
+//            Console.WriteLine("{0}, {1}", pt1.X, pt1.Y);
+
+//            Console.WriteLine();
+
+//            var pt2 = pt1;
+//            Console.WriteLine(pt2);
+//            Console.WriteLine(pt2.GetType().Name);
+//            Console.WriteLine("{0}, {1}", pt2.X, pt2.Y);
+//        }
+//    }
+//}
 
 
 //// Anonymous
