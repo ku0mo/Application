@@ -23,9 +23,41 @@ namespace CSharpConsoleApp
             PrintArray(arr);
             Array.Sort(arr);
             PrintArray(arr);
+            Array.Clear(arr, 0, arr.Length); //모든 원소를 0으로 초기화. 0 ~ length까지
+            PrintArray(arr);
         }
     }
 }
+
+
+//// Array
+//using System;
+//using System.Collections;
+//using System.Collections.Generic;
+//using System.Linq;
+//using System.Text;
+
+//namespace CSharpConsoleApp
+//{
+//    class Program
+//    {
+//        static void PrintArray(int[] arr)
+//        {
+//            for (int i = 0; i < arr.Length; ++i)
+//            {
+//                Console.WriteLine("{0,4}", arr[i]);
+//            }
+//            Console.WriteLine();
+//        }
+//        static void Main(string[] args)
+//        {
+//            int[] arr = { 20, 40, 10, 50, 30 };
+//            PrintArray(arr);
+//            Array.Sort(arr);
+//            PrintArray(arr);
+//        }
+//    }
+//}
 
 //// Array
 //using System;
